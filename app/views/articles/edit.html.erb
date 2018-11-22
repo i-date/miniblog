@@ -1,0 +1,19 @@
+<div class="container">
+  <%= form_tag('/articles/1', method: :patch, class: "col s12") do %>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="edit-article-title" type="text" class="validate" name="title" placeholder="編集前のタイトルが入ります">
+        <label for="edit-article-title">Title</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="edit-article-body" class="materialize-textarea" name="body" placeholder="編集前の本文が入ります"></textarea>
+        <label for="edit-article-body">Body</label>
+      </div>
+    </div>
+    <div>
+      <button class="btn waves-effect waves-light btn-large" type="submit" name="action">UPDATE</button>
+    </div>
+  <% end %>
+</div>
