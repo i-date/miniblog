@@ -16,4 +16,7 @@ class ArticlesController < ApplicationController
 
   def update
   end
+
+  def destroy
+  end
 end
