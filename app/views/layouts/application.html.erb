@@ -17,7 +17,7 @@
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><%= link_to 'SignUp', new_user_registration_path, method: :get %></li>
             <li><%= link_to 'SignIn', new_user_session_path, method: :get %></li>
-            <li><%= link_to 'SignOut', destroy_user_session_path, method: :get %></li>
+            <li><%= link_to 'SignOut', destroy_user_session_path, method: :delete %></li>
             <li><a href="/articles/new">New</a></li>
           </ul>
         </div>
