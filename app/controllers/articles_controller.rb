@@ -10,7 +10,11 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    Article.create(article_params)
+    @article = Article.new(article_params)
+    if @article.save
+    else
+      render action: :new
+    end
   end
 
   def show
