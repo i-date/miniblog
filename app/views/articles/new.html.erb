@@ -1,21 +1,19 @@
-<div class="container">
-  <%= form_tag('/articles', method: :post, class: "col s12") do %>
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="new-article-title" type="text" class="validate" name="title">
-        <label for="new-article-title">Title</label>
-      </div>
+<%= form_tag('/articles', method: :post, class: "col s12") do %>
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="new-article-title" type="text" class="validate" name="title">
+      <label for="new-article-title">Title</label>
     </div>
-    <div class="row">
-      <div class="input-field col s12">
-        <textarea id="new-article-body" class="materialize-textarea" name="body"></textarea>
-        <label for="new-article-body">Body</label>
-      </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <textarea id="new-article-body" class="materialize-textarea" name="body"></textarea>
+      <label for="new-article-body">Body</label>
     </div>
-    <div>
-      <button class="btn waves-effect waves-light btn-large" type="submit" name="action">送信
-        <i class="material-icons right">send</i>
-      </button>
-    </div>
-  <% end %>
-</div>
+  </div>
+  <div>
+    <button class="btn waves-effect waves-light btn-large" type="submit" name="action">送信
+      <i class="material-icons right">send</i>
+    </button>
+  </div>
+<% end %>
