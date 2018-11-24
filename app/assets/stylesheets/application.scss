@@ -3,31 +3,7 @@ $primary-color: color("blue-grey", "lighten-2") !default;
 $secondary-color: color("blue-grey", "lighten-3") !default;
 @import "materialize";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
-
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-}
-
-// common
-.row {
-  @include flex-center;
-}
-
-.flex-center {
-  @include flex-center;
-}
-
-.margin-center {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.btn-wide75 {
-  display: block;
-  height: 60px;
-  width: 75%;
-}
+@import "articles";
 
 // header
 .nav-wrapper .brand-logo {
@@ -36,10 +12,4 @@ $secondary-color: color("blue-grey", "lighten-3") !default;
 
 .nav-wrapper ul {
   margin-right: 100px;
-}
-
-// body
-.container {
-  width: 75%;
-  margin-top: 100px;
 }
