@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col s8 margin-center">
+    <div class="card-panel white">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="row ">
+          <div class="input-field col s12">
+            <%= f.label :nickname %>
+            <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname",  maxlength: "10", placeholder: "10 characters maximum" %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <%= f.label :email %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "" %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <%= f.password_field :password, autocomplete: "new-password", minlength: "6", placeholder: "#{@minimum_password_length} characters minimum" %>
+            <% else %>
+            <%= f.password_field :password, autocomplete: "new-password", placeholder: "" %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password",  minlength: "6", placeholder: "" %>
+          </div>
+        </div>
+
+        <div class="actions flex-center">
+          <%= f.submit "Sign up", class: "btn-wide75 blue-grey lighten-2 white-text" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
