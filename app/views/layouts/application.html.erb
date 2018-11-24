@@ -13,10 +13,11 @@
     <div class="navbar-fixed">
       <nav id="header">
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo">Blog</a>
+          <a href="/articles" class="brand-logo">Blog</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#">SignIn</a></li>
-            <li><a href="#">SignOut</a></li>
+            <li><%= link_to 'SignUp', new_user_registration_path, method: :get %></li>
+            <li><%= link_to 'SignIn', new_user_session_path, method: :get %></li>
+            <li><%= link_to 'SignOut', destroy_user_session_path, method: :get %></li>
             <li><a href="/articles/new">New</a></li>
           </ul>
         </div>
