@@ -6,27 +6,32 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    @article = Article.new
   end
 
   def create
-    Article.create(article_params)
+    @article = Article.new(article_params)
+    if @article.save
+    else
+      render action: :new
+    end
   end
 
   def show
-    @article = Article.find(params[:article_id])
+    @article = Article.find(params[:id])
   end
 
   def edit
-    @article = Article.find(params[:article_id])
+    @article = Article.find(params[:id])
   end
 
   def update
-    article = Article.find(params[:article_id])
+    article = Article.find(params[:id])
     article.update(title: article_params[:title], body: article_params[:body])
   end
 
   def destroy
-    article = Article.find(params[:article_id])
+    article = Article.find(params[:id])
     article.destroy if article.user_id === current_user.user_id
   end
 

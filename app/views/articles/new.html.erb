@@ -1,7 +1,17 @@
-<%= form_tag('/articles', method: :post, class: "col s12") do %>
+<%= form_for @article, url: articles_path, method: :post, class: "col s12" do |f| %>
+  <% if @article.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <div><%= @article.errors.full_messages.length %>errors occurred</div>
+      <ul>
+        <% @article.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="row">
     <div class="input-field col s12">
-      <input id="new-article-title" type="text" class="validate" name="title">
+      <textarea id="new-article-title" type="text" class="materialize-textarea" name="title"></textarea>
       <label for="new-article-title">Title</label>
     </div>
   </div>
@@ -12,8 +22,6 @@
     </div>
   </div>
   <div>
-    <button class="btn waves-effect waves-light btn-large" type="submit" name="action">送信
-      <i class="material-icons right">send</i>
-    </button>
+    <%= f.submit "SUBMIT", class: "btn waves-effect waves-light btn-large" %>
   </div>
 <% end %>

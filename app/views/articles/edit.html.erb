@@ -1,17 +1,27 @@
-<%= form_tag('/articles/1', method: :patch, class: "col s12") do %>
+<%= form_for @article, url: article_path(@article.article_id), method: :patch, class: "col s12" do |f| %>
+  <% if @article.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <div><%= @article.errors.full_messages.length %>errors occurred</div>
+      <ul>
+        <% @article.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="row">
     <div class="input-field col s12">
-      <input id="edit-article-title" type="text" class="validate" name="title" placeholder="編集前のタイトルが入ります">
+      <textarea id="edit-article-title" type="text" class="materialize-textarea" name="title"><%= @article.title %></textarea>
       <label for="edit-article-title">Title</label>
     </div>
   </div>
   <div class="row">
     <div class="input-field col s12">
-      <textarea id="edit-article-body" class="materialize-textarea" name="body" placeholder="編集前の本文が入ります"></textarea>
+      <textarea id="edit-article-body" class="materialize-textarea" name="body"><%= @article.body %></textarea>
       <label for="edit-article-body">Body</label>
     </div>
   </div>
   <div>
-    <button class="btn waves-effect waves-light btn-large" type="submit" name="action">UPDATE</button>
+    <%= f.submit "UPDATE", class: "btn waves-effect waves-light btn-large" %>
   </div>
 <% end %>
