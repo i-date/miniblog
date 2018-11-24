@@ -1,4 +1,14 @@
 <%= form_for @article, url: article_path(@article.article_id), method: :patch, class: "col s12" do |f| %>
+  <% if @article.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <div><%= @article.errors.full_messages.length %>errors occurred</div>
+      <ul>
+        <% @article.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="row">
     <div class="input-field col s12">
       <textarea id="edit-article-title" type="text" class="materialize-textarea" name="title"><%= @article.title %></textarea>
