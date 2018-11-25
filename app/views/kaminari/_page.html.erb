@@ -1,0 +1,9 @@
+<% if page.current? %>
+  <li class="active">
+    <a href="<%= url %>" class="no-event"><%= page %></a>
+  </li>
+<% else %>
+  <li class="waves-effect">
+    <a href="<%= url %>"><%= page %></a>
+  </li>
+<% end %>
