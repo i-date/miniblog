@@ -1,21 +1,19 @@
-# README
-
-## Database setting
-### usersテーブル
+# Database setting
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false, unique: true|
-|email|text|null: false, unique: true|
+|email|string|null: false, unique: true|
 
-#### Association
+### Association
 - has_many :articles
 
-### articlesテーブル
+## articlesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |title|text|null: false|
 |body|text|null: false|
-|user_id|references|null: false, foreign_key: true|
+|user_id|bigint|null: false|
 
-#### Association
+### Association
 - belongs_to :user
