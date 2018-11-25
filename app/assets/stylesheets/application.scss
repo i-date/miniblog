@@ -30,12 +30,9 @@ $secondary-color: color("blue-grey", "lighten-3") !default;
 }
 
 // header
-.nav-wrapper .brand-logo {
-  margin-left: 100px;
-}
-
-.nav-wrapper ul {
-  margin-right: 100px;
+.nav-wrapper {
+  width: 75%;
+  margin: 0 auto;
 }
 
 // body
