@@ -29,6 +29,14 @@ $secondary-color: color("blue-grey", "lighten-3") !default;
   width: 75%;
 }
 
+.top50 {
+  margin-top: 50px;
+}
+
+.bottom50 {
+  margin-bottom: 50px;
+}
+
 // header
 .nav-wrapper {
   width: 75%;
@@ -39,4 +47,8 @@ $secondary-color: color("blue-grey", "lighten-3") !default;
 .container {
   width: 75%;
   margin-top: 100px;
+}
+
+.no-event {
+  pointer-events: none;
 }
