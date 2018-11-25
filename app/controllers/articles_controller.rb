@@ -27,7 +27,10 @@ class ArticlesController < ApplicationController
 
   def update
     article = Article.find(params[:id])
-    article.update(title: article_params[:title], body: article_params[:body])
+    if article.update(title: article_params[:title], body: article_params[:body])
+    else
+      render action: :edit
+    end
   end
 
   def destroy
