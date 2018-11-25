@@ -1,0 +1,13 @@
+<% unless current_page.first? %>
+  <li class="waves-effect">
+    <%= link_to(url, remote: remote) do %>
+      <i class="material-icons">first_page</i>
+    <% end %>
+  </li>
+<% else %>
+  <li class="disabled">
+    <%= link_to(url, class: "no-event", remote: remote) do %>
+      <i class="material-icons">first_page</i>
+    <% end %>
+  </li>
+<% end %>
